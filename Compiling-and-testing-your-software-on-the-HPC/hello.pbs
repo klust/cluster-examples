@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#PBS -N hello
+#PBS -L tasks=1:lprocs=1:swap=512mb
+#PBS -l walltime=2:00
+
+base=$PBS_O_WORKDIR
+exe="./hello"
+out=output-torque
+
+cd "$base"
+./$exe > $out.$PBS_JOBID
+

@@ -1,0 +1,3 @@
+# Load the worker module
+# Run with:
+# wsub -prolog pre.sh -batch test_set.pbs -epilog post.sh -t 1-100

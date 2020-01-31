@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+#PBS -L tasks=1:lprocs=1:swap=1gb
+#PBS -l walltime=5:00
+#
+# redirect standard output (-o) and error (-e) (optional)
+# if omitted, the name of the job (specified by -N) or
+# a generic name (name of the script followed by .o or .e and 
+# job number) will be used
+#PBS -o stdout.$PBS_JOBID
+#PBS -e stderr.$PBS_JOBID
+
+# go to the (current) working directory (optional, if this is the
+# directory where you submitted the job)
+cd "$PBS_O_WORKDIR"
+echo Start Job
+date
+./file3.py
+echo End Job

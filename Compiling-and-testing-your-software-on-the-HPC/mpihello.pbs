@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#PBS -N mpihello
+#PBS -l walltime=00:05:00
+# assume a 56 core job
+#PBS -L tasks=56:lprocs=1:swap=512mb
+
+# make sure we are in the right directory in case writing files 
+cd "$PBS_O_WORKDIR"
+
+# load the environment
+
+module load leibniz/2017a
+module load intel
+
+mpirun ./mpihello

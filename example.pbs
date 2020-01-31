@@ -1,0 +1,74 @@
+#!/bin/bash
+
+# Specification (required!)
+# - Number of tasks
+# - Numer of logical processors per task
+# - Amound of swap space per task
+#PBS -L tasks=1:lprocs=1:swap=1gb
+
+# Walltime: The maximum time a job can run before being stopped. 
+# If not used a default of a few minutes is used. 
+# Use this flag to prevent jobs that go bad running for hundreds of hours. 
+# Format is HH:MM:SS
+#PBS -l walltime=12:00:00
+
+# Give your job a unique name
+#PBS -N galaxies1234
+
+# Make sure that the environment in which the job runs is the same as 
+# the environment in which it was submitted.
+#PBS -V
+
+# redirect standard output (-o) and error (-e) (optional)
+# if omitted, the name of the job (specified by -N) or
+# a generic name (name of the script followed by .o or .e and 
+# job number) will be used
+#PBS -o stdout.$PBS_JOBID
+#PBS -e stderr.$PBS_JOBID
+
+# send mail notification (optional)
+#   a        when job is aborted
+#   b        when job begins
+#   e        when job ends
+#   M        your e-mail address (should always be specified)
+#PBS -m ae
+#PBS -M firstname.lastname@uantwerpen.be
+
+# Using PBS - Environment Variables :
+#
+# When a batch job starts execution, a number of environment variables are
+# predefined, which include:
+#      Variables defined on the execution host.
+#      Variables exported from the submission host with
+#                -v (selected variables) and -V (all variables).
+#      Variables defined by PBS.
+#
+# The following reflect the environment where the user ran qsub:
+# PBS_O_HOST    The host where you ran the qsub command.
+# PBS_O_LOGNAME Your user ID where you ran qsub.
+# PBS_O_HOME    Your home directory where you ran qsub.
+# PBS_O_WORKDIR The working directory where you ran qsub.
+#
+# These reflect the environment where the job is executing:
+# PBS_ENVIRONMENT       Set to PBS_BATCH to indicate the job is a batch job,
+#         or to PBS_INTERACTIVE to indicate the job is a PBS interactive job.
+# PBS_O_QUEUE   The original queue you submitted to.
+# PBS_QUEUE     The queue the job is executing from.
+# PBS_JOBID     The job's PBS identifier.
+# PBS_JOBNAME   The job's name.
+
+
+# First load the appropriate cluster module
+# Then, activate the appropriate software packages
+module load cluster/version
+module load Package1 Package2 Package3
+
+# go to the (current) working directory (optional, if this is the
+# directory where you submitted the job)
+cd "$PBS_O_WORKDIR"
+echo Start Job
+date
+./your_executable <your-arguments>
+echo End Job
+
+

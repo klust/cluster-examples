@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+#PBS -L tasks=1:lprocs=1:swap=512mb
+#PBS -l walltime=10:00
+#
+
+cd $PBS_O_WORKDIR
+
+echo -e "\"Item\", \"Job name\", \"job id\"" \
+        "\n$PBS_ARRAYID, $PBS_JOBNAME, $PBS_JOBID" \
+     >output-${PBS_ARRAYID}.csv
+
+     

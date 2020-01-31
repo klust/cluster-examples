@@ -1,0 +1,3 @@
+# Add at least the wall time, CPU and memory to the requested resources to avoid using the defaults:
+#PBS -L tasks=1:lprocs=1:swap=1gb
+#PBS -l walltime=5:00

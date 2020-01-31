@@ -1,0 +1,35 @@
+#!/bin/bash
+#
+#PBS -L tasks=1:lprocs=1:swap=512mb
+#PBS -l walltime=10:00
+#
+# The idea of this script is to run 100 tasks.
+# * The first 80 will show random failures
+# * The next 10 will start but not produce a failed or completed log line
+#   as if they got interrupted during execution.
+# * Task 91 and further will not even show up with a start line in the 
+#   log file as if they were never executed.
+#
+
+cd $PBS_O_WORKDIR
+
+ml atools/torque
+
+# log start of work item execution
+if (( $PBS_ARRAYID <= 90 )); then
+  alog --state start
+fi
+
+# Generate a random exit code using the special variable $RANDOM
+# that we will use later.
+exit_code=$(( $RANDOM % 2 ))
+
+if (( $PBS_ARRAYID <= 80 )); then
+
+  # Do some work
+  echo "Item: $PBS_ARRAYID: Job name: $PBS_JOBNAME, job id: $PBS_JOBID, exit code: $exit_code."
+
+  # log end of work item execution
+  alog --state end --exit "$exit_code"
+
+fi

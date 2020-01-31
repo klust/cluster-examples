@@ -1,0 +1,9 @@
+* Load atools
+* Try:
+
+  acreate weather.pbs
+  
+* Try:
+
+  acreate --data data.csv --shell bash weather.pbs
+  

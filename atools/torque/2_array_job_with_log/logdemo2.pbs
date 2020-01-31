@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+#PBS -L tasks=1:lprocs=1:swap=512mb
+#PBS -l walltime=10:00
+
+cd $PBS_O_WORKDIR
+
+ml atools/torque
+
+# log start of work item execution
+alog --state start
+
+# This is for the second run, we'll now make sure they all succeed.
+exit_code=0
+
+# Do some work
+echo "Item: $PBS_ARRAYID: Job name: $PBS_JOBNAME, job id: $PBS_JOBID, exit code: $exit_code."
+
+# log end of work item execution
+alog --state end --exit "$exit_code"
