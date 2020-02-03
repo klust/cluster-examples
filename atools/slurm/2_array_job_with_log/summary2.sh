@@ -1,7 +1,7 @@
 #! /bin/bash
 #
 
-module load atools/torque
+module load atools/slurm
 
 printf "\n\e[0;34mCalling arange with full options. All items should now be completed.\e[0m\n\n"
 arange -t 1-100 --log logdemo1.slurm.log* logdemo2.slurm.log* --summary --list_completed --list_failed --list_todo

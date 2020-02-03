@@ -1,5 +1,7 @@
-Extended demo for analysing log files. Now the load is also studied using
+Extended demo 2 for analysing log files. Now the load is also studied using
 aload.
+
+* Run demo.sh, or
 
 * Execute the submit1 script
   This is written in such a way that some jobs will actually produce a failure

@@ -1,12 +1,12 @@
 #!/bin/bash
 # Example of a worker parameter sweep job
 #
-#SBATCH --ntasks=1 --cpus-per-task=1 --mem-per-cpu=512M
-#SBATCH --time=10:00
+#PBS -L tasks=1:lprocs=1:swap=512mb
+#PBS -l walltime=10:00
 
-ml calcua/supported
-ml personal
-ml atools/slurm
+cd $PBS_O_WORKDIR
+
+ml atools/torque
 
 source <(aenv --data data.csv)
 ./weather -t $temperature -p $pressure -v $volume

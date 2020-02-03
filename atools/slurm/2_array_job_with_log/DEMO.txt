@@ -1,5 +1,7 @@
 Demo for analysing log files of a regular array job.
 
+* Run demo.sh, or
+
 * Execute the submit1 script
   This is written in such a way that some jobs will actually produce a failure
   note in the log file, and that only the first 80 jobs end and the first 90

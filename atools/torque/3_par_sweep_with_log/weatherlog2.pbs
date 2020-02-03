@@ -1,0 +1,22 @@
+#!/bin/bash
+# Example of a worker parameter sweep job
+#
+#PBS -L tasks=1:lprocs=1:swap=512mb
+#PBS -l walltime=10:00
+#
+# Now all tasks should complete without problems.
+#
+
+cd $PBS_O_WORKDIR
+
+ml atools/torque
+
+# log start of work item execution
+alog --state start
+
+source <(aenv --data datalog.csv)
+./weatherlog -t $temperature -p $pressure -v $volume -l 420
+exit_code=$?
+
+# log end of work item execution
+alog --state end --exit "$exit_code"
