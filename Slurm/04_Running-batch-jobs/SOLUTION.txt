@@ -1,0 +1,10 @@
+Add at least the wall time, CPU and memory to the requested resources to avoid using the defaults:
+* for Slurm systems:
+
+#SBATCH --ntasks=1 --cpus-per-task=1 --mem=1g
+#SBATCH --time=5:00
+
+* For torque systems:
+
+#PBS -L tasks=1:lprocs=1:swap=1gb
+#PBS -l walltime=5:00

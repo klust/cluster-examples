@@ -1,0 +1,12 @@
+#!/bin/bash
+#PBS -L tasks=1:lprocs=1:swap=100mb
+#PBS -l walltime=00:05:00
+
+# Go to the directory where you submitted the job
+cd "$PBS_O_WORKDIR"
+
+# the program itself
+echo Start Job
+date
+./file1.py
+echo End Job

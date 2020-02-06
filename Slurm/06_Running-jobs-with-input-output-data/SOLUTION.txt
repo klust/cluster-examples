@@ -1,0 +1,49 @@
+* file1a scripts: Simple output
+  - Torque: file1a.pbs will generate three output files: The file hello.txt,
+    one of the form file1a.pbs.o<jobid> which contains all output sent to stdout,
+    including some information form Torque, and a file of the form
+    file1a.pbs.e<jobid> with all output sent to stderr.
+  - Slurm: 
+    + file1a.slurm only generates two files: The file hello.txt and a
+      file of the form slurm-<jobid>.out. The latter contains all output sent to
+      stdout and stderr. By default, these are sent to the same file in 
+      Slurm.
+    + file1aa.slurm solves this problem by adding the line
+      #SBATCH --error=slurm-%j.err
+      to the job script. Now stdout is sent to a file of the form
+      slurm-<jobid>.out and stderr is sent to a file of the form
+      slurm-<jobid>.err.
+* file1b scripts: Giving the job a name and using that name for the files
+  to which stdout and stderr are redirected.
+  - Torque: file1b.pbs: This script again generates three files, but the two
+    files whose name contained the name of the job script, are now renamed. The
+    name of the job script is replaced by the name given to the job, my_serial_job,
+    so we now have the file my_serial_job.o<jobid> and my_serial_job.e<jobid>
+    besides the file Hello.txt.
+  - Slurm: In Slurm it requires a bit more work to include the job name in
+    the name of the output files. We now used --job-name to change the name of the
+    job, but also needed to specify two file name templates for stdout and stderr:
+    #SBATCH --output=%x-%j.out
+    #SBATCH --error=%x-%j.err
+    %x in this template stands for the name of the job, %j for the job id, so we
+    will get the files my_serial_job-<jobid>.out and my_serial_job-<jobid>.err
+    with stdout and stderr respectively.
+* file1c scripts: Give explicit names to the files that receive output sent to
+  stdout and stderr.
+  - Torque: file1c.pbs generates the files Hello.txt, stdout.<jobid> and 
+    stderr.<jobid>. Note in the script how the PBS_ environment variables can
+    be used as part of the name.
+  - Slurm: file1c.slurm generates the same three files Hello.txt, stdout.<jobid> 
+    and stderr.<jobid>. However, the name of the file is given through a template
+    with various codes for jobid etc. and not using SLURM_ environment variables.
+    Those codes can be found in the manual page for sbatch.
+* file2 scripts: A Python script that also writes a file on $VSC_SCRATCH, but 
+  otherwise largely equivalent to file1c.
+  - Both the Slurm and PBS scripts generate a large file primes_1.txt on 
+    $VSC_SCRATCH
+  - Both the Slurm and PBS scripts generate files stdout.<jobid> and
+    stderr.<jobid> with the output sent to stdout and stderr respectively.
+* file3 scripts: An extension of the file2 example. file3.py first generate
+  the primes_1.txt file on $VSC_SCRATCH just as file2, then reads it again and
+  does some processing on the data. 
+  

@@ -1,4 +1,7 @@
-# Examples for array jobs via Torque job arrays and Worker
+# Examples for array jobs via Slurm, Torque and Worker
+#
+# Launch the Slurm array job:
+# sbatch --array 1-100 job_array.slurm
 #
 # Launch the Torque array job:
 # qsub -t 1-100 job_array.pbs

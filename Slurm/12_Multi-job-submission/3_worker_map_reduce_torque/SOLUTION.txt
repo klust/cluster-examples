@@ -1,0 +1,29 @@
+Demo of map-reduce with worker.
+
+Work process:
+* pre.sh generates the input files for each of the jobs (the map-step:
+  split a big problem in subproblems that can be solved in parallel)
+* test_set.pbs specifies the work for a single job. However, it includes
+  the resource specification for the complete worker job.
+* post.sh generates a single output file from all output files of the
+  individual worker items (the reduction step: Combine the results of
+  the subproblems into a single output).
+
+Steps to run:
+* Load the worker module
+* Run with:
+  wsub -prolog pre.sh -batch test_set.pbs -epilog post.sh -t 1-100
+
+When using atools: 
+* There is no simple way to automate the preprocessing (map) and
+  postprocessing (reduce) steps. Unless using job dependencies, the
+  easiest way is to run the pre.sh script before submitting the job
+  and the post.sh script by hand when all jobs have finished.
+* atoold does offer a feature (the areduce command) to apply the 
+  reduction step only to the output of tasks that have ended 
+  successfully, even before rerunning to try to do the missing
+  or failed jobs again. Worker offers restart features also, but no
+  easy way to run the postprocessing script correctly before all
+  items have been executed successfully.
+
+See the atools examples for how to use the advanced features of atools.
