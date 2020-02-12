@@ -11,6 +11,7 @@
 
 cd $PBS_O_WORKDIR
 
+module load calcua/supported
 module load atools/torque
 
 mode=$(( $RANDOM % 5 ))

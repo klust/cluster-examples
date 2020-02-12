@@ -19,7 +19,7 @@ When using atools:
   postprocessing (reduce) steps. Unless using job dependencies, the
   easiest way is to run the pre.sh script before submitting the job
   and the post.sh script by hand when all jobs have finished.
-* atoold does offer a feature (the areduce command) to apply the 
+* atools does offer a feature (the areduce command) to apply the 
   reduction step only to the output of tasks that have ended 
   successfully, even before rerunning to try to do the missing
   or failed jobs again. Worker offers restart features also, but no

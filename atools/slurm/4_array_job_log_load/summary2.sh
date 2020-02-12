@@ -7,7 +7,7 @@ module load atools/slurm
 # Analyzing completed jobs
 #
 printf "\n\e[0;34mCalling arange with full options. All items should now be completed.\e[0m\n\n"
-arange -t 1-100 --log logdemo1.slurm.log* logdemo2.slurm.log* --summary --list_completed --list_failed --list_todo
+arange -t 1-100 --log logdemo1.slurm.log* logdemo2.slurm.log* --summary --list_completed --list_failed
 
 printf "\n\e[0;34mChecking the output of arange as it would be used to restart for the incomplete jobs only. This should print an empty line.\e[0m\n\n"
 arange -t 1-100 --log logdemo1.slurm.log* logdemo2.slurm.log*

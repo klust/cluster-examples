@@ -7,7 +7,7 @@ module load atools/torque
 # Analyzing completed jobs
 #
 printf "\n\e[0;34mCalling arange with full options. It should list items with number higher than 80 as to do and a certain number of failed jobs.\e[0m\n\n"
-arange -t 1-100 --log logdemo1.pbs.log* logdemo2.pbs.log* --summary --list_completed --list_failed --list_todo
+arange -t 1-100 --log logdemo1.pbs.log* logdemo2.pbs.log* --summary --list_completed --list_failed
 
 printf "\n\e[0;34mChecking the output of arange as it would be used to restart for the incomplete jobs only. This should print nothing.\e[0m\n\n"
 arange -t 1-100 --log logdemo1.pbs.log* logdemo2.pbs.log*

@@ -14,6 +14,7 @@
 
 cd $PBS_O_WORKDIR
 
+ml calcua/supported
 ml atools/torque
 
 # log start of work item execution

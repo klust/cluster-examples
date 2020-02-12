@@ -7,7 +7,7 @@ module load atools/slurm
 # Analyzing completed jobs
 #
 printf "\n\e[0;34mCalling arange with full options. It should now only list completed jobs.\e[0m\n\n"
-arange --data datalog.csv --log weatherlog1.slurm.log* weatherlog2.slurm.log* --summary --list_completed --list_failed --list_todo
+arange --data datalog.csv --log weatherlog1.slurm.log* weatherlog2.slurm.log* --summary --list_completed --list_failed
 
 printf "\n\e[0;34mChecking the output of arange as it would be used to restart for the incomplete jobs only.\nThis should print an empty line.\e[0m\n\n"
 arange --data datalog.csv --log weatherlog1.slurm.log* weatherlog2.slurm.log*
