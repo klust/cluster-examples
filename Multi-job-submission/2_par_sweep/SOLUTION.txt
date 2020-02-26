@@ -1,7 +1,8 @@
 Example for worker parameter sweep with a spreadsheet table as input.
 
 * With atools
-  - Load the atools module (as we need the arange command)
+  - Load the atools module (as we need the arange command):
+    module load atools/torque
   - Launch with qsub -t:
     qsub -t $(arange --data data.csv) weather.pbs
 

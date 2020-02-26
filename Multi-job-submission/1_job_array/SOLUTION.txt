@@ -4,7 +4,7 @@
 # qsub -t 1-100 job_array.pbs
 #
 # Launch the worker array job (Torque/Moab systems only):
-# wsub -t 1-100 -batch test_set.pbs
+# wsub -t 1-100 -batch worker_array.pbs
 #
 # Note the difference in the resource specifications:
 # - Torque array job: Resources for a single job of the array

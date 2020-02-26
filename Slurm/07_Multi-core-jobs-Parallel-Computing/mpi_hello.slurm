@@ -6,6 +6,7 @@
 #SBATCH --time=5:00
 
 # Build the environment
+module purge
 ml calcua/2019b
 ml intel/2019b
 

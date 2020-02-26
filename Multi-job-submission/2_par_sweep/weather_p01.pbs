@@ -1,5 +1,6 @@
 #!/bin/bash
-# Test the weather program
+# Test the weather program for a single set of parameters.
+#
 #PBS -L tasks=1:lprocs=1:swap=512mb
 #PBS -l walltime=01:00:00
 
