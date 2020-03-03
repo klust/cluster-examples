@@ -15,10 +15,6 @@
 # Give your job a unique name
 #PBS -N galaxies1234
 
-# Make sure that the environment in which the job runs is the same as 
-# the environment in which it was submitted.
-#PBS -V
-
 # redirect standard output (-o) and error (-e) (optional)
 # if omitted, the name of the job (specified by -N) or
 # a generic name (name of the script followed by .o or .e and 
