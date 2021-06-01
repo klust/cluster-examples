@@ -13,9 +13,9 @@
 
 ## Solution with workflow
 
-  * ``job_fiurst.slurm`` is the job script that performs the first task.
+  * ``job_first.slurm`` is the job script that performs the first task.
 
-  * ``job_dpend.slurm`` is the job script to solve one perturbed problem.
+  * ``job_depend.slurm`` is the job script to solve one perturbed problem.
     The "perturbation" is passed to it through the environment variable
     ``multiplier``.
 
