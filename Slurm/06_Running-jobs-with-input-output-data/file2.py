@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 #
 # VSC        : Flemish Supercomputing Centre
 # Tutorial   : Introduction to HPC
@@ -16,7 +16,7 @@ start_time = int(time.time())
 def primes(top):
 	result = []
 	for n in range(2, top):
-		for x in range(2, n/2+1):
+		for x in range(2, int(n/2+1)):
 			if n % x == 0:
 				break
 		else:
@@ -33,7 +33,7 @@ def primes(top):
 #
 scratch_dir = os.environ.get('VSC_SCRATCH')
 filename_p1 = scratch_dir + "/primes_1.txt"
-print "Output File: ", filename_p1
+print("Output File: ", filename_p1)
 f_out = open(filename_p1, 'w+')
 # repeat 30000 times
 for i in range(1, 30000):
@@ -50,5 +50,5 @@ f_out.close()
 
 end_time = int(time.time())
 duration = end_time - start_time
-print "Duration = " + str(duration) + " seconds."
+print("Duration = " + str(duration) + " seconds.")
 

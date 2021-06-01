@@ -16,7 +16,7 @@ start_time = int(time.time())
 def primes(top):
 	result = []
 	for n in range(2, top):
-		for x in range(2, n/2+1):
+		for x in range(2, int(n/2+1)):
 			if n % x == 0:
 				break
 		else:
@@ -35,7 +35,7 @@ def primes(top):
 #
 scratch_dir = os.environ.get('VSC_SCRATCH')
 filename_p1 = scratch_dir + "/primes_1.txt"
-print "Output File: ", filename_p1
+print("Output File: ", filename_p1)
 f_out = open(filename_p1, 'w+')
 for i in range(1, 30000):
 	# We take a random integer between 3 and 2000
@@ -58,8 +58,8 @@ filename_p1 = scratch_dir + "/primes_1.txt"
 filename_p2 = scratch_dir + "/primes_2.txt"
 f_in=open(filename_p1, "r")
 f_out=open(filename_p2, "w")
-print "Input File: ", filename_p1
-print "Output File: ", filename_p2
+print("Input File: ", filename_p1)
+print("Output File: ", filename_p2)
 in_lines=f_in.readlines()          					  #reads it line by line
 for line in in_lines:
 	delim = line.find("[")
@@ -80,5 +80,5 @@ f_out.close()
 
 end_time = int(time.time())
 duration = end_time - start_time
-print "Duration = " + str(duration) + " seconds."
+print("Duration = " + str(duration) + " seconds.")
 
