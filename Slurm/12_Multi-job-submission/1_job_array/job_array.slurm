@@ -7,4 +7,4 @@
 INPUT_FILE="input_${SLURM_ARRAY_TASK_ID}.dat"
 OUTPUT_FILE="output_${SLURM_ARRAY_TASK_ID}.dat"
 
-./test_set ${SLURM_ARRAY_TASK_ID} -input ${INPUT_FILE}  -output ${OUTPUT_FILE}
+./test_set ${SLURM_ARRAY_TASK_ID} -input ${INPUT_FILE} -output ${OUTPUT_FILE}
