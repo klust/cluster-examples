@@ -7,8 +7,8 @@
 
 # Build the environment
 module purge
-ml calcua/2019b
-ml intel/2019b
+ml calcua/2020a
+ml intel/2020a
 
 # Run the MPI program
 srun ./mpi_hello
