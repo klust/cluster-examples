@@ -77,7 +77,7 @@ commands below also from a terminal window in your VNC session.
 ``fibo2.m`` is a simple Matlab script. The purpose of this exercise is to get Matlab
 running and then run a simple Matlab program.
 
-**MATLAB graphics does not currently work on Vaughan.**
+**MATLAB graphics does not currently work on the compute nodes of Vaughan.**
 
 #### Solution
 
