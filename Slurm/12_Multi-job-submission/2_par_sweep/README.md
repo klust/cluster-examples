@@ -21,6 +21,6 @@ We use ``atools`` in two places:
     range of array elements corresponding to the spreadsheet file:
     ``` batch
     module load calcua/2020a
-    module load atools/1.4.7-slurm
+    module load atools/slurm
     sbatch --array $(arange --data data.csv) weather.slurm
     ```
