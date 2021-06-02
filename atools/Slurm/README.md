@@ -12,4 +12,4 @@
 
  6. [A first example with reduction](6_reduce_csv_output)
 
- 7. [A more advanced example with reduction](7_reduce_scv_output_advanced)
+ 7. [A more advanced example with reduction](7_reduce_csv_output_advanced)
