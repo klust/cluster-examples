@@ -1,4 +1,4 @@
-For a more user-friendly formatting, check https://github.com/klust/cluster-examples
+For a more user-friendly formatting, check https://github.com/hpcuantwerpen/cluster-examples
 
 # cluster-examples: Example job script for the CalcUA clusters
 
