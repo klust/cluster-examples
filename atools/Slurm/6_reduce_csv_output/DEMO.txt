@@ -1,8 +1,0 @@
-Demo: areduce to reduce the output files of a job to a single .csv file.
-This demo is the simple case, where are jobs are supposed to have completed
-successfully.
-
-* Run demo.sh, or
-
-* Execute the submit.sh script
-* Run summary.sh script to see the use of areduce.
