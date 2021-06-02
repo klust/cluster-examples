@@ -17,5 +17,5 @@ or
     The job script should now only produce successful runs.
   * When all jobs have finished, run [``summary2.sh``](summary2.sh) to verify the results.
     Note that now ``arange`` will use two log files.
-  * Run the cleanup script ``clean.sh``.
+  * Run the cleanup script [``clean.sh``](clean.sh).
     Don't test again without doing this!
