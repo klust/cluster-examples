@@ -1,7 +1,7 @@
 # Slurm examples
 
-These examples correspond to the VSC tutorial, except for the X*-directories
-which is material not covered in the common VSC tutorial.
+These examples correspond to the VSC tutorial, except for the workflow examples in
+the X*-directories which is material not covered in the common VSC tutorial.
 
   * [Chapter 4: Running batch jobs](04_Running-batch-jobs)
 
