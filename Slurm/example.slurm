@@ -8,21 +8,24 @@
 # Memory
 #SBATCH --mem-per-cpu=1g
 
-# Walltime: The maximum time a job can run before being stopped. 
-# If not used a default of a few minutes is used. 
-# Use this flag to prevent jobs that go bad running for hundreds of hours. 
+# Walltime: The maximum time a job can run before being stopped.
+# If not used a default of a few minutes is used.
+# Use this flag to prevent jobs that go bad running for hundreds of hours.
 # Format is HH:MM:SS
 #SBATCH --time=12:00:00
 
 # Give your job a unique name
 #SBATCH --job-name=galaxies1234
 
+# Specifying a partition when not using the default
+#SBATCH --partition=short
+
 # redirect standard output (-o) and error (-e) (optional).
 # By default Slurm will merge both in a single file
 # called slurm-<jobid>.out.
-# By specifying 
+# By specifying
 # if omitted, the name of the job (specified by -N) or
-# a generic name (name of the script followed by .o or .e and 
+# a generic name (name of the script followed by .o or .e and
 # job number) will be used
 #SBATCH --output=stdout.%j
 #SBATCH --error=stderr.%j
