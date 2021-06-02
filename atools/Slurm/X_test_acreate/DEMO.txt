@@ -1,9 +1,0 @@
-* Load atools
-* Try:
-
-  acreate weather.slurm
-  
-* Try:
-
-  acreate --data data.csv --shell bash weather.slurm
-  
