@@ -14,13 +14,13 @@ execute 'sbatch --wait --array $(arange --data datalog.csv) weatherlog1.slurm'
 #
 # Analysing the first batch of jobs.
 #
-printf "\n\e[0;34mCalling arange with full options. It should list items 22 completed, 8 failed and 11 jobs to do.\e[0m\n\n"
+printf "\n\e[0;34mCalling arange with full options. It should list 22 completed items, 8 failed ones and 11 jobs to do.\e[0m\n\n"
 execute 'arange --data datalog.csv --log weatherlog1.slurm.log* --summary --list_completed --list_failed'
 
 printf "\n\e[0;34mAs the .csv file is only used to determine the task id range, we could use the follwing construct as well:\e[0m\n\n"
 execute 'arange -t $(arange --data datalog.csv) --log weatherlog1.slurm.log* --summary --list_completed --list_failed'
 
-printf "\n\e[0;34mChecking the output of arange as it would be used to restart for the incomplete jobs only. This should list 81-100.\e[0m\n\n"
+printf "\n\e[0;34mChecking the output of arange as it would be used to restart for the incomplete jobs only. This should list 31-41.\e[0m\n\n"
 execute 'arange --data datalog.csv --log weatherlog1.slurm.log*'
 
 printf "\n\e[0;34mChecking the output of arange as it would be used to restart for failed and incomplete jobs.\e[0m\n\n"
