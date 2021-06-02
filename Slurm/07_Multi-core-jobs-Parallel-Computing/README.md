@@ -74,8 +74,6 @@ some simple communication.
       * ``mpiicc -O2 mpi_hello.c -o mpi_hello``
       * Run with the included job script [``mpi_hello.slurm``](mpi_hello.slurm).
   * Compiling with gcc and Intel MPI:
-      * Load an intel module and the ``binutils`` module from the
-        matching ``GCCcore`` toolchain (``GCCcore-9.3.0`` for ``intel/2020a``).
-        The ``binutils`` module is only needed for compiling.
+      * Load an intel module.
       * ``mpigcc -O3 -march=native mpi_hello.c -o mpi_hello``
       * Run with the included job script (same as above).
