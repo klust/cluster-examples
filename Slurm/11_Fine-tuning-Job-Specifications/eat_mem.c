@@ -13,7 +13,8 @@ const unsigned int MiB = 1024 * KiB;
 const unsigned int default_GiB = 3;
 const unsigned int max_GiB = 12;
 const unsigned int long_sleep = 10;
-const unsigned int micro_sleep = 20000;
+const unsigned int micro_sleep_malloc = 20000;
+const unsigned int micro_sleep_free = 5000;
 
 int main(int argc, char *argv[])
 {
@@ -78,7 +79,7 @@ int main(int argc, char *argv[])
 		else
 		{
 			memcpy(mem[i], (void *)buffer, MiB);
-			usleep(micro_sleep); // Wait 20 microseconds
+			usleep(micro_sleep_malloc); // Wait 20 microseconds
 		}
 	}
 
@@ -91,6 +92,7 @@ int main(int argc, char *argv[])
 	for (unsigned int i = 0; i < tot_GiB * 1024; i++)
 	{
 		free(mem[i]);
+		usleep(micro_sleep_free); // Wait 5 microseconds
 	}
 	// Sleep 10 seconds, so that you have time to monitor the freed-up	memory
 	printf("Freed the memory, sleeping %u seconds\n", long_sleep);

@@ -8,7 +8,7 @@
 #include <string.h>
 #include <time.h>
 
-#define n 1500
+#define n 5000
 
 static double a[n][n], b[n][n], c[n][n];
 
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	/* 
+	/*
 	 * Matrix multiplication
 	 */
 	printf("Performing matrix multiplication:\n");

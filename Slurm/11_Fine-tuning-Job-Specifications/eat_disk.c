@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define lines 100000000
+#define lines 150000000
 
 int main(int argc, char *argv[])
 {
