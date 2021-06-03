@@ -17,6 +17,7 @@ exit_code=0
 
 # Do some work
 echo "Item: $SLURM_ARRAY_TASK_ID: Job name: $SLURM_JOB_NAME, array job id: $SLURM_ARRAY_JOB_ID, job id: $SLURM_JOB_ID, exit code: $exit_code."
+sleep $(( 1 + $RANDOM % 4 ))
 
 # log end of work item execution
 alog --state end --exit "$exit_code"

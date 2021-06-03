@@ -30,11 +30,11 @@ aload --log logdemo2.slurm.log*
 #
 # Load analysis of the first and second batches of jobs
 #
-printf "\n\e[0;34mDoes not work: The following command will print an overview of the nodes used to run the job. The number of items should sum up to 80.\e[0m\n\n"
+printf "\n\e[0;34mDoes not work (atools bug): The following command will print an overview of the nodes used to run the job. The number of items should sum up to 80.\e[0m\n\n"
 aload --log logdemo1.slurm.log* logdemo2.slurm.log* --list_slaves
 
-printf "\n\e[0;34mDoes not work: Now we print an overview of all work items, where they were executed and how much time it took.\e[0m\n\n"
+printf "\n\e[0;34mDoes not work (atools bug): Now we print an overview of all work items, where they were executed and how much time it took.\e[0m\n\n"
 aload --log logdemo1.slurm.log* logdemo2.slurm.log* --list_tasks
 
-printf "\n\e[0;34mDoes not work: The output of aload without further arguments besides the log file.\e[0m\n\n"
+printf "\n\e[0;34mDoes not work (atools bug): The output of aload without further arguments besides the log file.\e[0m\n\n"
 aload --log logdemo1.slurm.log* logdemo2.slurm.log*
