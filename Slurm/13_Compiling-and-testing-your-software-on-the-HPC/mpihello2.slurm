@@ -17,7 +17,7 @@
 
 # Build the environment
 ml calcua/2020a
-ml intel/2020b
+ml intel/2020a
 
 # Run the MPI program
 srun ./mpihello

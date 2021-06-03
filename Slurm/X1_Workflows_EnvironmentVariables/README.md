@@ -9,14 +9,14 @@
     doing that in separate work directories so that in principle those two
     tasks could have run in parallel.
 
-  * Start with ``sbatch job.slurm``
+  * Submit the job script [``job.slurm``](job.slurm) with ``sbatch job.slurm``
 
 ## Solution with workflow
 
-  * ``job_first.slurm`` is the job script that performs the first task.
+  * [``job_first.slurm``](job_first.slurm) is the job script that performs the first task.
 
-  * ``job_depend.slurm`` is the job script to solve one perturbed problem.
+  * [``job_depend.slurm``](job_depend.slurm) is the job script to solve one perturbed problem.
     The "perturbation" is passed to it through the environment variable
     ``multiplier``.
 
-  * ``job_launch.slurm`` shows how to launch these three jobs as a workflow.
+  * [``job_launch.sh``](job_launch.sh) shows how to launch these three jobs as a workflow.

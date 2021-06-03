@@ -12,7 +12,7 @@
 # If not used a default of a few minutes is used.
 # Use this flag to prevent jobs that go bad running for hundreds of hours.
 # Format is HH:MM:SS
-#SBATCH --time=12:00:00
+#SBATCH --time=4:00:00
 
 # Give your job a unique name
 #SBATCH --job-name=galaxies1234

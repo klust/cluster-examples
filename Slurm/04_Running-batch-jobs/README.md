@@ -4,8 +4,8 @@
 
 ### Task
 
-Have a look at the script ``fibo.slurm``. This is an incomplete script to start the
-Perl script ``fibo.pl``(that you don't need to change). Turn this into a better job
+Have a look at the script [``fibo.slurm``](fibo.slurm). This is an incomplete script to start the
+Perl script [``fibo.pl``](fibo.pl) (that you don't need to change). Turn this into a better job
 script that does not rely on default values.
 
 ### Solution
@@ -20,4 +20,4 @@ Add at least the wall time, CPU and memory to the requested resources to avoid u
 
 ./fibo.pl
 ```
-(See [fibo-solution.slurm](fibo-solution.slurm))
+(See [``fibo-solution.slurm``](fibo-solution.slurm))

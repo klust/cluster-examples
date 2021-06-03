@@ -2,7 +2,7 @@
 
 ## Section 5.2 Interactive jobs, without X support, primes.py example
 
-``primes.py`` is a simple Python script that can be run using the system Python.
+[``primes.py``](primes.py) is a simple Python script that can be run using the system Python.
 There is no need to load a Python module for this example. Try to run it on the
 command line of a compute node anc compute all prime numbers between 1 and 20.
 
@@ -10,7 +10,7 @@ command line of a compute node anc compute all prime numbers between 1 and 20.
 
 This is not a parallel program at all, so we really need only one core. The best
 way to get this, is through ``srun``. Assuming you're running from the directory
-that contains ``primes.py``:
+that contains [``primes.py``](primes.py):
 
 ``` bash
 login$ srun -n 1 -c 1 -t 15:00 --pty bash
@@ -49,7 +49,7 @@ make sense in those scenarios.
 
 ### Example: message.py
 
-``message.py`` is a simple Python script that displays a simple message box on the
+[``message.py``](message.py) is a simple Python script that displays a simple message box on the
 screen using X11.
 
 #### Solution
@@ -74,7 +74,7 @@ doesn't work very well. Using a VNC session on the login nodes (not yet supporte
 Vaughan) is the most acceptable way to get some performance, and you can execute the
 commands below also from a terminal window in your VNC session.
 
-``fibo2.m`` is a simple Matlab script. The purpose of this exercise is to get Matlab
+[``fibo2.m``](fibo2.m) is a simple Matlab script. The purpose of this exercise is to get Matlab
 running and then run a simple Matlab program.
 
 **MATLAB graphics does not currently work on the compute nodes of Vaughan.**

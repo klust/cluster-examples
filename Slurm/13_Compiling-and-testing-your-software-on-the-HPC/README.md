@@ -79,7 +79,7 @@ variables. However, at UAntwerpen, the following should work:
   * The standard wrappers of Intel MPI ``mpicc``, ``mpicxx`` and ``mpifc``
     default to the GNU compilers. Executing those commands without arguments
     will tell you how to select a different compiler.
-  * Open MPI (in installed) provides the ``mpicc``, ``mpicxx`` and ``mpifort`` wrappers.
+  * Open MPI (if installed) provides the ``mpicc``, ``mpicxx`` and ``mpifort`` wrappers.
 
 Now use this information to compile and run the [``mpihello.c``](mpihello.c)
 example.
