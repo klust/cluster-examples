@@ -51,7 +51,7 @@
 #      Exported variables of your .bash_profile if --export=NONE is used
 #      Variables defined by Slurm.
 #
-# SLURM_JOB_ID   The job's Slurm identifier.
+# SLURM_JOB_ID   The job's Slurm identifier
 # SLURM_JOB_NAME The job's name.
 
 
@@ -60,6 +60,11 @@
 module purge
 module load cluster/version
 module load Package1 Package2 Package3
+
+# If you want to see which variables are defined, use this bit of code:
+echo -e "\nSLURM environment variables:\n$(env | grep ^SLURM_)\n"
+echo -e "VSC environment variables:\n$(env | grep ^VSC_)\n"
+echo -e "EasyBuild-defined environment variables:\n$(env | egrep "EBROOT|EBVERSION" | sort)\n"
 
 # Start the job, which runs in the directory in which you executed sbatch
 echo Start Job
